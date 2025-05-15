@@ -1,0 +1,10 @@
+-- test-log.txt
+-- Author: Frank
+-- This file captures the output from each test run to document TDD progression.
+-- It must be updated after every run of the test suite to show incremental development.
+
+[Run: Initial Setup]
+Test Cases:
+  Empty tree should equal Empty: [OK]
+
+Cases: 1  Tried: 1  Errors: 0  Failures: 0
