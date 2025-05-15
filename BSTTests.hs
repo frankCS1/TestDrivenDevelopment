@@ -1,21 +1,32 @@
 -- BSTTests.hs
--- Author: Frank 
--- Contains unit tests for the BST module using HUnit.
--- This supports test-driven development (TDD) by verifying expected tree behaviours.
+-- Author: Frank
+-- Description: HUnit-based unit tests for the BST module.
+-- Developed using TDD, following skills from:
+-- - HUnit Testing exercise (Automated HUnit Testing.html)
+-- - Functional test design from Grades.hs
+-- - Test suite structure and assertions
 
 module Main where
 
-import Test.HUnit   -- Import HUnit testing framework
-import BST          -- Import the module under test
+import Test.HUnit      -- Imported from HUnit exercise
+import BST             -- Our module under test (BST.hs)
 
--- Test: Check that the Empty tree equals itself.
--- This serves as a minimal test to verify correct module setup and data structure equality.
+-- Test that the Empty constructor behaves as expected.
+-- This is a basic test confirming BST data type structure.
 testEmpty :: Test
 testEmpty = TestCase (assertEqual "Empty tree should equal Empty" Empty Empty)
 
--- Main test runner: executes all defined unit tests.
--- Additional tests should be added to the TestList as new functionality is implemented.
+-- Test inserting a single key-value pair into an empty BST.
+-- This test was written before the insert function existed,
+-- demonstrating the first step in the TDD cycle.
+testInsertSingle :: Test
+testInsertSingle =
+  let result = insert 5 "five" Empty
+      expected = Node 5 "five" Empty Empty
+  in TestCase (assertEqual "Insert single node into empty BST" expected result)
+
+-- Add more tests progressively as we implement new features (TDD process).
 main :: IO ()
 main = do
-  _ <- runTestTT (TestList [testEmpty])
+  _ <- runTestTT (TestList [testEmpty, testInsertSingle])
   return ()
