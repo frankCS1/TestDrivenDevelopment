@@ -30,3 +30,13 @@ main :: IO ()
 main = do
   _ <- runTestTT (TestList [testEmpty, testInsertSingle])
   return ()
+
+-- Test inserting multiple nodes to ensure correct placement in left and right subtrees.
+-- Reinforces recursion and ordering from Grades.hs and Polymorphic Structures exercises.
+testInsertMultiple :: Test
+testInsertMultiple =
+  let result = insert 7 "seven" (insert 3 "three" (insert 5 "five" Empty))
+      expected = Node 5 "five"
+                    (Node 3 "three" Empty Empty)
+                    (Node 7 "seven" Empty Empty)
+  in TestCase (assertEqual "Insert left and right nodes into BST" expected result)
