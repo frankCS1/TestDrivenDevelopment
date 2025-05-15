@@ -9,3 +9,14 @@ Test Cases:
   Insert single node into empty BST: [OK]
 
 Cases: 2  Tried: 2  Errors: 0  Failures: 0
+
+-- test-log.txt
+
+[Run: Insert multiple nodes]
+Test Cases:
+  Empty tree should equal Empty: [OK]
+  Insert single node into empty BST: [OK]
+  Insert left and right nodes into BST: [OK]
+
+Cases: 3  Tried: 3  Errors: 0  Failures: 0
+
