@@ -28,8 +28,9 @@ testInsertSingle =
 -- Add more tests progressively as we implement new features (TDD process).
 main :: IO ()
 main = do
-  _ <- runTestTT (TestList [testEmpty, testInsertSingle])
+  _ <- runTestTT (TestList [testEmpty, testInsertSingle, testInsertMultiple])
   return ()
+
 
 -- Test inserting multiple nodes to ensure correct placement in left and right subtrees.
 -- Reinforces recursion and ordering from Grades.hs and Polymorphic Structures exercises.
