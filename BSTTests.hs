@@ -28,8 +28,9 @@ testInsertSingle =
 -- Add more tests progressively as we implement new features (TDD process).
 main :: IO ()
 main = do
-  _ <- runTestTT (TestList [testEmpty, testInsertSingle, testInsertMultiple])
+  _ <- runTestTT (TestList [testEmpty, testInsertSingle, testInsertMultiple, testLookupSingle])
   return ()
+
 
 
 -- Test inserting multiple nodes to ensure correct placement in left and right subtrees.
