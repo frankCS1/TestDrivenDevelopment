@@ -41,3 +41,11 @@ testInsertMultiple =
                     (Node 3 "three" Empty Empty)
                     (Node 7 "seven" Empty Empty)
   in TestCase (assertEqual "Insert left and right nodes into BST" expected result)
+
+-- Test lookup on a BST containing one key-value pair.
+-- Skills applied: pattern matching, Maybe type handling (from List Processing + Grades.hs logic).
+testLookupSingle :: Test
+testLookupSingle =
+  let tree = insert 5 "five" Empty
+      result = lookupBST 5 tree
+  in TestCase (assertEqual "Lookup existing key in single-node tree" (Just "five") result)
