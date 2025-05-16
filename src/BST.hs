@@ -10,8 +10,18 @@
 module BST (
     BST(..),        -- Exporting the data type so test cases can pattern match
     insert,         -- Insertion function
-    lookupBST       -- Lookup function
+    lookupBST,       -- Lookup function
+    countIf
 ) where
+
+-- Count the number of values in the tree that satisfy a predicate.
+-- Demonstrates use of higher-order functions and recursion.
+-- Inspired by exercises on List Processing and Functional Patterns.
+countIf :: (v -> Bool) -> BST k v -> Int
+countIf _ Empty = 0
+countIf pred (Node _ v left right) =
+  let match = if pred v then 1 else 0
+  in match + countIf pred left + countIf pred right
 
 -- Define a generic Binary Search Tree (BST)
 -- 'k' is the key type, which must be orderable (Ord)

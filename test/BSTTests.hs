@@ -50,5 +50,40 @@ testLookupSingle =
 -- Main test runner: executes all defined unit tests.
 main :: IO ()
 main = do
-  _ <- runTestTT (TestList [testEmpty, testInsertSingle, testInsertMultiple, testLookupSingle])
+  _ <- runTestTT (TestList [
+      testEmpty,
+      testInsertSingle,
+      testInsertMultiple,
+      testLookupSingle,
+      testLookupMissing,
+      testCountIfLengthGT3
+--      testDeleteAndLookup       
+    ])
   return ()
+
+
+-- Test lookup of a key that does not exist in the BST.
+-- This test will initially fail until 'lookupBST' handles missing keys correctly.
+testLookupMissing :: Test
+testLookupMissing =
+  let tree = insert 10 "ten" (insert 5 "five" Empty)
+      result = lookupBST 99 tree
+  in TestCase (assertEqual "Lookup missing key should return Nothing" Nothing result)
+
+-- Test counting values that match a predicate
+-- Demonstrates higher-order functions and tree traversal
+testCountIfLengthGT3 :: Test
+testCountIfLengthGT3 =
+  let tree = insert 1 "one" (insert 2 "three" (insert 3 "seven" Empty))
+      result = countIf (\v -> length v > 3) tree
+  in TestCase (assertEqual "Count values with length > 3" 2 result)
+
+-- Test deletion of a key from the BST
+-- Will fail until 'deleteBST' is implemented
+--testDeleteAndLookup :: Test
+--testDeleteAndLookup =
+--  let tree = insert 1 "one" (insert 2 "two" (insert 3 "three" Empty))
+--      updatedTree = deleteBST 2 tree
+--      result = lookupBST 2 updatedTree
+-- in TestCase (assertEqual "After deleting key 2, lookup should return Nothing" Nothing result)
+

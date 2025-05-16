@@ -1,0 +1,101 @@
+
+
+
+Build profile: -w ghc-9.6.7 -O1
+In order, the following will be built (use -v for more details):
+ - TestDrivenDevelopment-0.1.0.0 (lib) (file src/BST.hs changed)
+ - TestDrivenDevelopment-0.1.0.0 (test:bst-tests) (dependency rebuilt)
+Preprocessing library for TestDrivenDevelopment-0.1.0.0...
+Building library for TestDrivenDevelopment-0.1.0.0...
+[1 of 1] Compiling BST              ( src/BST.hs, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/build/BST.o, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/build/BST.dyn_o ) [Source file changed]
+Preprocessing test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+Building test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+[1 of 1] Compiling Main             ( test/BSTTests.hs, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/t/bst-tests/build/bst-tests/bst-tests-tmp/Main.o ) [BST changed]
+Build profile: -w ghc-9.6.7 -O1
+In order, the following will be built (use -v for more details):
+ - TestDrivenDevelopment-0.1.0.0 (test:bst-tests) (file /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/cache/build changed)
+Preprocessing test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+Building test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+[1 of 1] Compiling Main             ( test/BSTTests.hs, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/t/bst-tests/build/bst-tests/bst-tests-tmp/Main.o ) [BST changed]
+Build profile: -w ghc-9.6.7 -O1
+In order, the following will be built (use -v for more details):
+ - TestDrivenDevelopment-0.1.0.0 (test:bst-tests) (file /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/cache/build changed)
+Preprocessing test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+Building test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+[1 of 1] Compiling Main             ( test/BSTTests.hs, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/t/bst-tests/build/bst-tests/bst-tests-tmp/Main.o ) [BST changed]
+Build profile: -w ghc-9.6.7 -O1
+In order, the following will be built (use -v for more details):
+ - TestDrivenDevelopment-0.1.0.0 (test:bst-tests) (file /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/cache/build changed)
+Preprocessing test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+Building test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+[1 of 1] Compiling Main             ( test/BSTTests.hs, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/t/bst-tests/build/bst-tests/bst-tests-tmp/Main.o ) [BST changed]
+
+# TDD Step: Red phase for Fail 1
+# lookupBST not yet implemented.
+# testLookupSingle and testLookupMissing failed to compile with:
+# Error: Variable not in scope: lookupBST
+
+test/BSTTests.hs:47:16: error: [GHC-88464]
+    Variable not in scope: lookupBST :: t1 -> BST k1 String -> t
+   |
+47 |       result = lookupBST 5 tree
+   |                ^^^^^^^^^
+
+test/BSTTests.hs:68:16: error: [GHC-88464]
+    Variable not in scope: lookupBST :: t0 -> BST k0 String -> t
+   |
+68 |       result = lookupBST 99 tree
+   |                ^^^^^^^^^
+
+# TDD Step: RED (Fail 2)
+# Wrote testCountIfLengthGT3 to count values with length > 3
+# Test failed as expected — countIf not yet defined.
+
+Build profile: -w ghc-9.6.7 -O1
+In order, the following will be built (use -v for more details):
+ - TestDrivenDevelopment-0.1.0.0 (lib) (file src/BST.hs changed)
+ - TestDrivenDevelopment-0.1.0.0 (test:bst-tests) (dependency rebuilt)
+Preprocessing library for TestDrivenDevelopment-0.1.0.0...
+Building library for TestDrivenDevelopment-0.1.0.0...
+[1 of 1] Compiling BST              ( src/BST.hs, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/build/BST.o, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/build/BST.dyn_o ) [Source file changed]
+Preprocessing test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+Building test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+[1 of 1] Compiling Main             ( test/BSTTests.hs, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/t/bst-tests/build/bst-tests/bst-tests-tmp/Main.o ) [Source file changed]
+
+test/BSTTests.hs:77:16: error: [GHC-88464]
+    Variable not in scope:
+      countIf :: (t0 a1 -> Bool) -> BST k0 String -> t
+    Suggested fix: Perhaps use ‘counts’ (imported from Test.HUnit)
+   |
+77 |       result = countIf (\v -> length v > 3) tree
+   |                ^^^^^^^
+
+# TDD Step: RED (Fail 3)
+# Wrote testDeleteAndLookup to ensure a deleted key is not retrievable.
+# Test failed as expected — deleteBST is not yet implemented.
+
+Build profile: -w ghc-9.6.7 -O1
+In order, the following will be built (use -v for more details):
+ - TestDrivenDevelopment-0.1.0.0 (lib) (file src/BST.hs changed)
+ - TestDrivenDevelopment-0.1.0.0 (test:bst-tests) (dependency rebuilt)
+Preprocessing library for TestDrivenDevelopment-0.1.0.0...
+Building library for TestDrivenDevelopment-0.1.0.0...
+[1 of 1] Compiling BST              ( src/BST.hs, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/build/BST.o, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/build/BST.dyn_o ) [Source file changed]
+Preprocessing test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+Building test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+[1 of 1] Compiling Main             ( test/BSTTests.hs, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/t/bst-tests/build/bst-tests/bst-tests-tmp/Main.o ) [Source file changed]
+
+test/BSTTests.hs:86:21: error: [GHC-88464]
+    Variable not in scope: deleteBST :: t0 -> BST k0 String -> t
+   |
+86 |       updatedTree = deleteBST 2 tree
+   |                     ^^^^^^^^^
+
+Build profile: -w ghc-9.6.7 -O1
+In order, the following will be built (use -v for more details):
+ - TestDrivenDevelopment-0.1.0.0 (test:bst-tests) (file test/BSTTests.hs changed)
+Preprocessing test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+Building test suite 'bst-tests' for TestDrivenDevelopment-0.1.0.0...
+[1 of 1] Compiling Main             ( test/BSTTests.hs, /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/t/bst-tests/build/bst-tests/bst-tests-tmp/Main.o ) [Source file changed]
+[2 of 2] Linking /Users/frankmotsi/Documents/NTU-TDD/TestDrivenDevelopment/dist-newstyle/build/x86_64-osx/ghc-9.6.7/TestDrivenDevelopment-0.1.0.0/t/bst-tests/build/bst-tests/bst-tests [Objects changed]
+Cases: 6  Tried: 0  Errors: 0  Failures: 0Cases: 6  Tried: 1  Errors: 0  Failures: 0Cases: 6  Tried: 2  Errors: 0  Failures: 0Cases: 6  Tried: 3  Errors: 0  Failures: 0Cases: 6  Tried: 4  Errors: 0  Failures: 0Cases: 6  Tried: 5  Errors: 0  Failures: 0                                          Cases: 6  Tried: 6  Errors: 0  Failures: 0
