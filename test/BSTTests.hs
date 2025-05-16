@@ -14,7 +14,11 @@ import BST             -- Our module under test (BST.hs)
 -- Test that the Empty constructor behaves as expected.
 -- This is a basic test confirming BST data type structure.
 testEmpty :: Test
-testEmpty = TestCase (assertEqual "Empty tree should equal Empty" Empty Empty)
+testEmpty = TestCase (
+  let tree :: BST Int String
+      tree = Empty
+  in assertEqual "Empty tree should equal Empty" tree tree
+  )
 
 -- Test inserting a single key-value pair into an empty BST.
 -- This test was written before the insert function existed,
@@ -24,14 +28,6 @@ testInsertSingle =
   let result = insert 5 "five" Empty
       expected = Node 5 "five" Empty Empty
   in TestCase (assertEqual "Insert single node into empty BST" expected result)
-
--- Add more tests progressively as we implement new features (TDD process).
-main :: IO ()
-main = do
-  _ <- runTestTT (TestList [testEmpty, testInsertSingle, testInsertMultiple, testLookupSingle])
-  return ()
-
-
 
 -- Test inserting multiple nodes to ensure correct placement in left and right subtrees.
 -- Reinforces recursion and ordering from Grades.hs and Polymorphic Structures exercises.
@@ -50,3 +46,9 @@ testLookupSingle =
   let tree = insert 5 "five" Empty
       result = lookupBST 5 tree
   in TestCase (assertEqual "Lookup existing key in single-node tree" (Just "five") result)
+
+-- Main test runner: executes all defined unit tests.
+main :: IO ()
+main = do
+  _ <- runTestTT (TestList [testEmpty, testInsertSingle, testInsertMultiple, testLookupSingle])
+  return ()

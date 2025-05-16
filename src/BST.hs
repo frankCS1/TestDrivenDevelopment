@@ -7,7 +7,11 @@
 -- - Functional recursion (List Processing & Luhn Algorithm exercises)
 -- - Type signatures and guards (Grades.hs from earlier coursework)
 
-module BST where
+module BST (
+    BST(..),        -- Exporting the data type so test cases can pattern match
+    insert,         -- Insertion function
+    lookupBST       -- Lookup function
+) where
 
 -- Define a generic Binary Search Tree (BST)
 -- 'k' is the key type, which must be orderable (Ord)
@@ -26,3 +30,13 @@ insert key val (Node k v left right)
   | key < k   = Node k v (insert key val left) right
   | key > k   = Node k v left (insert key val right)
   | otherwise = Node key val left right  -- Replace existing value (no duplicate keys)
+
+-- Lookup a value by key in the BST.
+-- Returns Nothing if the key is not found.
+-- Uses recursion and guards – developed using logic from List Processing and functional pattern matching.
+lookupBST :: Ord k => k -> BST k v -> Maybe v
+lookupBST _ Empty = Nothing
+lookupBST key (Node k v left right)
+  | key < k   = lookupBST key left
+  | key > k   = lookupBST key right
+  | otherwise = Just v

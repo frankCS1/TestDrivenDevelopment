@@ -1,27 +1,26 @@
--- TestDrivenDevelopment.cabal
-
-cabal-version:       >=1.10
+cabal-version:       3.0
 name:                TestDrivenDevelopment
 version:             0.1.0.0
 build-type:          Simple
 
--- Brief description
-synopsis:            TDD-based implementation of a binary search tree dictionary in Haskell
-description:         A case study in test-driven development using Haskell, with unit and property-based tests.
-license:             MIT
-author:              Your Name
-maintainer:          your.email@ntu.ac.uk
+-- Optional metadata
+synopsis:            BST Dictionary using TDD in Haskell
+description:         A functional dictionary implemented via a binary 
+search tree, developed using test-driven development and unit testing.
 category:            Education
-extra-source-files:  test-log.txt
+author:              Frank Motsi
+maintainer:          frank@example.com
+license:             MIT
+license-file:        LICENSE
 
--- The main library (BST and Dictionary modules)
+-- === LIBRARY CONFIGURATION ===
 library
-  exposed-modules:     BST, Dictionary
+  exposed-modules:     BST
   hs-source-dirs:      src
   build-depends:       base >=4.7 && <5
   default-language:    Haskell2010
 
--- Unit tests using HUnit
+-- === UNIT TEST CONFIGURATION ===
 test-suite bst-tests
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
@@ -31,12 +30,3 @@ test-suite bst-tests
                        TestDrivenDevelopment
   default-language:    Haskell2010
 
--- Property tests using QuickCheck (optional, for DictionaryTests.hs)
-test-suite dictionary-tests
-  type:                exitcode-stdio-1.0
-  hs-source-dirs:      test
-  main-is:             DictionaryTests.hs
-  build-depends:       base >=4.7 && <5,
-                       QuickCheck,
-                       TestDrivenDevelopment
-  default-language:    Haskell2010
